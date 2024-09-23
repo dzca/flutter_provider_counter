@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_provider_counter/providers/user_provider.dart';
 import 'package:provider/provider.dart';
 
+import 'providers/counter_provider.dart';
 import 'utils/colors.dart';
 import 'widgets/nav_layout.dart';
 
@@ -18,8 +19,11 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => UserProvider(),
-        )
+          create: (_) => UserProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (_) => CounterProvider(),
+        ),
       ],
       child: MaterialApp(
         title: 'Flutter Provider',

@@ -1,3 +1,5 @@
+import '../screens/counter_screen.dart';
+
 import '../screens/home_screen.dart';
 
 import 'package:flutter/material.dart';
@@ -28,12 +30,14 @@ class _NavLayoutState extends State<NavLayout> {
         index: _selectedIndex,
         children: const [
           HomeScreen(),
+          CounterScreen(),
           SettingsScreen(),
         ],
       ),
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+          NavigationDestination(icon: Icon(Icons.calculate), label: 'Counter'),
           NavigationDestination(icon: Icon(Icons.settings), label: 'Settings'),
         ],
         selectedIndex: _selectedIndex,
