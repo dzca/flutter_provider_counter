@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import '../providers/user_provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,10 +12,10 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Home"),
       ),
-      body: const Center(
+      body: Center(
         child: Text(
-          'Dustin',
-          style: TextStyle(
+          context.watch<UserProvider>().name,
+          style: const TextStyle(
             fontSize: 30,
           ),
         ),
